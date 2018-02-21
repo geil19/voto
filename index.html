@@ -26,13 +26,16 @@
 		var canvasLimites; // los margenes del canvas
 		var flagPaint=false; // nos dice si pintar o no
 		var actualPos; // la posición actual donde hice click
-	
+		var img = new Image();
+		img.src = "imagenes/1_4917996647822131212002.png";
 
 
 	function prepareCanvas(){
 		miLienzo=document.getElementById("canvasEjemplo");
 		contexto= miLienzo.getContext("2d"); // obtenemos el contexto ( dibujar en 2d)
-
+		img.onload = function(){
+ 			 ctx.drawImage(img, 0, 0);
+		}
 		canvasLimites=miLienzo.getBoundingClientRect(); // obtenemos los limites del canvas
 		miLienzo.addEventListener('mousedown',cambiarEstado,false);
 		miLienzo.addEventListener('mouseup',cambiarEstado,false);
